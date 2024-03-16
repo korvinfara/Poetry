@@ -4,7 +4,9 @@
       :space-between="0"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
-      navigation
+   
+   
+
     >
       <swiper-slide>
         <div class="slider__item painting item-01 slider__item_active" style="">
@@ -133,30 +135,6 @@
               </div>
           </div>
       </div>
-      <div class="slider__item painting item-04" style="">
-          <button class="painting-buy">
-              <img class="icon" src="@/assets/svg/cart_w.svg">
-          </button>
-          <div class="painting-text">
-              <div class="align">
-                  <div>Прощённым ты настолько можешь быть</div>
-                  <div>Насколько в состоянии простить</div>
-              </div>
-          </div>
-          <div class="painting-image">
-              <img class="image" src="@/assets/jpg/picture_04.jpg">
-              <div class="painting-info">
-                  <div class="info">
-                      <div class="info-row">Картина № 234234234</div>
-                      <div class="info-row">Холс, масло, 100х80. 2021</div>
-                  </div>
-                  <a class="button primary green" href="">
-                      <img class="icon" src="@/assets/svg/cart_w.svg"/>
-                      <span class="text">купить</span>
-                  </a>
-              </div>
-          </div>
-      </div>
       </swiper-slide>
       <swiper-slide>
         <div class="slider__item painting item-04" style="">
@@ -183,7 +161,7 @@
               </div>
           </div>
       </div>
-      </swiper-slide>
+      </swiper-slide>  
       <swiper-slide>
         <div class="slider__item painting item-05" style="">
           <button class="painting-buy">
@@ -484,12 +462,19 @@
           </div>
       </div>      
       </swiper-slide>
+      <button  class="slider__btn slider__btn_prev">
+            <img src="@/assets/svg/prev_y.svg">
+      </button>
+      <button @click="swiper1.slideNext()" class="slider__btn slider__btn_next">
+            <img src="@/assets/svg/next_y.svg">
+      </button>
     </swiper>
 
   </template>
   <script>
     // Import Swiper Vue.js components
-    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import { Swiper, SwiperSlide, useSwiper  } from 'swiper/vue';
+
     import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
     import 'swiper/css/navigation';
     // Import Swiper styles
@@ -504,21 +489,26 @@
         SwiperSlide,
       },
       setup() {
+        const swiper1 = useSwiper();
+
         const onSwiper = (swiper) => {
-          console.log(swiper);
+       
         };
         const onSlideChange = (e) => {
           
         };
+        
+       
         return {
           onSwiper,
           onSlideChange,
+          swiper1,
           modules: [Navigation, Pagination, Scrollbar, A11y],
+          
         };
       },
       methods:{
         onSlideChange(e){
-          console.log('slide change', e.activeIndex);
           this.$emit('currindex', e.activeIndex)
         }
       }

@@ -22,7 +22,8 @@
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper">
                                 <Slider @currindex="setCurrIndex" class="slider__items"/>
-
+                    
+                               
                             </div>
                         </div>
                     </div>
@@ -33,15 +34,18 @@
 
 <script>
 import Slider from '../components/SliderGallery.vue'
-export default {
+
+export default { 
+
   name: 'GallaryItemView',
+
   components: {
     Slider
   },
   props: {
     msg: String
   },
-    data(){
+  data(){
     return {
         currIndex: 1
     }
