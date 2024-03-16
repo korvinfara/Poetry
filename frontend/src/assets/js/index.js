@@ -1,8 +1,7 @@
 const mobileMenuButton = document.querySelector('.button .mobile')
 const body = document.body
 console.log('>>', mobileMenuButton)
-mobileMenuButton.onclick = function (event) {
-  event.preventDefault()
+mobileMenuButton.onclick = function () {
   mobileMenuButton.classList.toggle('checked')
   body.classList.toggle('overflow')
   return null
