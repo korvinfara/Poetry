@@ -363,12 +363,41 @@
 </template>
 
 <script>
+
 export default {
   name: 'GallaryView',
   props: {
     msg: String
+  },
+  mounted(){
+    const paintings = document.querySelectorAll('.item.painting')
+    paintings.forEach(function (painting) {
+        const align = painting.querySelector('.align')
+        const divs = align.querySelectorAll('div')
+        const totalHeight = Array.from(divs).reduce((acc, div) => acc + div.offsetHeight, 0)
+
+        const animationDuration = divs.length * 1.5
+
+        align.style.transitionDuration = animationDuration + 's'
+
+        painting.addEventListener('mouseenter', function () {
+            align.style.transform = 'translateY(-' + totalHeight + 'px)'
+
+            divs.forEach(function (div) {
+                const rect = div.getBoundingClientRect()
+                const textRect = painting.querySelector('.painting-text').getBoundingClientRect()
+                if (rect.top <= textRect.top) {
+                    div.style.opacity = '1'
+                }
+            })
+        })
+        painting.addEventListener('mouseleave', function () {
+            align.style.transform = 'none'
+        })
+    })
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

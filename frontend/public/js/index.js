@@ -1,11 +1,4 @@
-const mobileMenuButton = document.querySelector('button')
-const body = document.body
-console.log('>>', mobileMenuButton)
-mobileMenuButton.onclick = function () {
-  mobileMenuButton.classList.toggle('checked')
-  body.classList.toggle('overflow')
-  return null
-}
+
 
 const paintings = document.querySelectorAll('.item.painting')
 

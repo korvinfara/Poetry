@@ -1,71 +1,9 @@
 <template>
-    {{ data }}
+    {{ data }} 
     <div class="slider primary index" data-slider="itc-slider" data-loop="true">
             <div class="slider__wrapper">
-                <div class="slider__items" style="">
-                    <a class="slider__item item-01 slider__item_active" href="#" style="">
-                        <div class="banner">
-                            <div class="banner-image">
-                                <img src="@/assets/jpg/banner_gallery.jpg" >
-                            </div>
-                            <div class="center">
-                                <div class="banner-text">
-                                    <h2 class="title bold">Игорь Булгаков. Поэтические полотна</h2>
-                                    <div class="text">
-                                        Тематический цикл «Экология Сознания». Синтез философии, живописи и поэзии.
-                                    </div>
-                                    <div class="location">
-                                        <img src="@/assets/svg/map_pointer.svg"/>
-                                        <div>Галерея на «Мосфильме», г. Москва, ул. Мосфильмовская, д. 1, к. 3</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="slider__item item-02" href="#" style="">
-                        <div class="banner">
-                            <div class="banner-image">
-                                <img src="@/assets/jpg/banner_gallery.jpg">
-                            </div>
-                            <div class="center">
-                                <div class="banner-text">
-                                    <h2 class="title bold">Игорь Булгаков. Поэтические полотна</h2>
-                                    <div class="text">
-                                        Тематический цикл «Экология Сознания». Синтез философии, живописи и поэзии.
-                                    </div>
-                                    <div class="location">
-                                        <img src="@/assets/svg/map_pointer.svg"/>
-                                        <div>Галерея на «Мосфильме», г. Москва, ул. Мосфильмовская, д. 1, к. 3</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="slider__item item-03 banner video" style="">
-                        <div class="center">
-                            <div class="banner-text">
-                                <h2 class="title">Беседы о творчестве</h2>
-                                <div class="text">
-                                    «Каждый холст, он вводит меня в определённые состояния.
-                                    Да, эти состояния не повторяются точно так же,
-                                    как не повторяются и холсты»
-                                </div>
-                                <div class="buttons">
-                                    <a class="button primary circle green" href="/support">
-                                        <span>подробнее</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="banner-video">
-                                <div class="preview">
-                                    <img class="preview-image" src="@/assets/jpg/banner_video.jpg"/>
-                                    <img class="preview-button" src="@/assets/svg/video_play.svg"/>
-                                </div>
-                                <iframe class="frame" src="https://www.youtube.com/embed/rnVRdcTpHw8?si=mSjkW4hqcUeiefC5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Slider class="slider__items"/>
+           
                 <button class="slider__btn slider__btn_prev">
                     <img src="@/assets/svg/prev_y.svg">
                 </button>
@@ -1327,14 +1265,20 @@
                 </div>
             </div>
         </div>
+        
 </template>
 
 <script>
 import { useStore } from '../store/index'
+import Slider from '../components/SliderBanner.vue'
+
 export default {
   setup () {
     const userStore = useStore()
     return { userStore }
+  },
+  components: {
+    Slider
   },
   name: 'HomeView',
   props: {
@@ -1351,12 +1295,32 @@ export default {
       name: ''
     }
   },
-  mounted () {
-    // window.addEventListener('scroll', this.handleScroll)
-    // this.userStore.getMultipleCharacters(0, 1)
-    // console.log(this.userStore)
-    // this.from = 11
-    // this.to = 12
+  mounted(){
+    const paintings = document.querySelectorAll('.item.painting')
+    paintings.forEach(function (painting) {
+        const align = painting.querySelector('.align')
+        const divs = align.querySelectorAll('div')
+        const totalHeight = Array.from(divs).reduce((acc, div) => acc + div.offsetHeight, 0)
+
+        const animationDuration = divs.length * 1.5
+
+        align.style.transitionDuration = animationDuration + 's'
+
+        painting.addEventListener('mouseenter', function () {
+            align.style.transform = 'translateY(-' + totalHeight + 'px)'
+
+            divs.forEach(function (div) {
+                const rect = div.getBoundingClientRect()
+                const textRect = painting.querySelector('.painting-text').getBoundingClientRect()
+                if (rect.top <= textRect.top) {
+                    div.style.opacity = '1'
+                }
+            })
+        })
+        painting.addEventListener('mouseleave', function () {
+            align.style.transform = 'none'
+        })
+    })
   }
 }
 </script>
@@ -1364,4 +1328,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-</style>
+</style>../components/SliderBanner.vue

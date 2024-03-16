@@ -9,6 +9,7 @@ import BooksView from '../views/BooksView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import CartView from '../views/CartView.vue'
 import PoemsItemView from '../views/PoemsItemView.vue'
+
 import GalleryItemView from '../views/GalleryItemView.vue'
 const routes = [
   {
