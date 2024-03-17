@@ -1,11 +1,11 @@
 <template>
     <swiper
-
+    class="swiper"
     :modules="modules"
     :slides-per-view="1"
     :space-between="50"
     :parallax="true"
-    navigation
+  
 
     @swiper="onSwiper"
     @slideChange="onSlideChange"
@@ -464,13 +464,22 @@
               </div>
           </div>
       </div>      
+      
       </swiper-slide>
-    </swiper>
 
+    </swiper>
+        <button @click="slidePrev" class="slider__btn slider__btn_prev">
+            <img class="icon one" src="@/assets/svg/prev_g.svg">
+            <img class="icon two" src="@/assets/svg/prev_y.svg">
+        </button>
+        <button @click="slideNext" class="slider__btn slider__btn_next">
+            <img class="icon one" src="@/assets/svg/next_g.svg">
+            <img class="icon two" src="@/assets/svg/next_y.svg">
+        </button>
   </template>
   <script>
     // Import Swiper Vue.js components
-    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import { Swiper, SwiperSlide, useSwiper  } from 'swiper/vue';
     import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
     // Import Swiper styles
@@ -478,19 +487,19 @@
     import 'swiper/css/navigation';
     import 'swiper/css/pagination';
     import 'swiper/css/scrollbar';
-  
+   
+    
     export default {
       components: {
         Swiper,
         SwiperSlide,
       },
       setup() {
-
         const onSwiper = (swiper) => {
         };
         const onSlideChange = (e) => {
         };
-       
+
         return {
           onSwiper,
           onSlideChange,
@@ -500,13 +509,24 @@
       },
       data(){
         return{
-            
+            swiper: null
         }
+      },
+      mounted(){
+        this.swiper = document.querySelector(".swiper").swiper;
+        console.log(this.swiper)
+     
       },
       methods:{
         onSlideChange(e){
           this.$emit('currindex', e.activeIndex)
         },
+        slideNext(){
+            this.swiper.slideNext()
+        },
+        slidePrev(){
+            this.swiper.slidePrev()
+        }
 
       }
   

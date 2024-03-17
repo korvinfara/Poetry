@@ -1,4 +1,4 @@
-<template>rffrfr
+<template>
 <div class="main">
             <div class="module gallery-slider">
                 <div class="module-center">
@@ -21,8 +21,8 @@
                     <div class="module-content">
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper">
-                                <Slider @currindex="setCurrIndex" class="slider__items"/>
-                    
+                               <Slider @currindex="setCurrIndex" class="slider__items"/>
+                            
                                
                             </div>
                         </div>
