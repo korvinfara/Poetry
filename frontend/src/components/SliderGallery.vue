@@ -1,11 +1,14 @@
 <template>
     <swiper
-      :slides-per-view="1"
-      :space-between="0"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
-   
-   
+
+    :modules="modules"
+    :slides-per-view="1"
+    :space-between="50"
+    :parallax="true"
+    navigation
+
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
 
     >
       <swiper-slide>
@@ -462,21 +465,14 @@
           </div>
       </div>      
       </swiper-slide>
-      <button  class="slider__btn slider__btn_prev">
-            <img src="@/assets/svg/prev_y.svg">
-      </button>
-      <button @click="swiper1.slideNext()" class="slider__btn slider__btn_next">
-            <img src="@/assets/svg/next_y.svg">
-      </button>
     </swiper>
 
   </template>
   <script>
     // Import Swiper Vue.js components
-    import { Swiper, SwiperSlide, useSwiper  } from 'swiper/vue';
-
+    import { Swiper, SwiperSlide } from 'swiper/vue';
     import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-    import 'swiper/css/navigation';
+
     // Import Swiper styles
     import 'swiper/css';
     import 'swiper/css/navigation';
@@ -489,29 +485,41 @@
         SwiperSlide,
       },
       setup() {
-        const swiper1 = useSwiper();
 
         const onSwiper = (swiper) => {
-       
         };
         const onSlideChange = (e) => {
-          
         };
-        
        
         return {
           onSwiper,
           onSlideChange,
-          swiper1,
           modules: [Navigation, Pagination, Scrollbar, A11y],
           
         };
       },
+      data(){
+        return{
+            
+        }
+      },
       methods:{
         onSlideChange(e){
           this.$emit('currindex', e.activeIndex)
-        }
+        },
+
       }
   
     };
   </script>
+  <style >
+.swiper-button-next{
+    top: 30%;
+    color: #FFC200
+}
+.swiper-button-prev{
+    top: 30%;
+    color: #FFC200
+    
+}
+</style>

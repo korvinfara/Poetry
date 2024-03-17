@@ -767,6 +767,7 @@ img {
     height: 100%;
     width: 50px;
     top: 0;
+ 
 }
 .slider.primary .slider__wrapper .slider__btn .icon {
     position: absolute;
@@ -785,6 +786,7 @@ img {
 }
 .slider.primary .slider__wrapper .slider__btn.slider__btn_next {
     right: 15px;
+   
 }
 .slider.primary .slider__wrapper .slider__indicators {
     transform: translate(-50%);
