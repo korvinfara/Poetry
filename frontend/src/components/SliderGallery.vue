@@ -5,11 +5,9 @@
     :slides-per-view="1"
     :space-between="50"
     :parallax="true"
-  
 
     @swiper="onSwiper"
     @slideChange="onSlideChange"
-
     >
       <swiper-slide>
         <div class="slider__item painting item-01 slider__item_active" style="">
