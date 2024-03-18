@@ -19,7 +19,7 @@
             </button>
             <div class="menu" id="primary-menu">
                 <div class="menu-list">
-                    <div class="menu-item checked">
+                    <div class="menu-item">
                         <router-link class="item-link " to="/about">о творчестве</router-link>
                     </div>
                     <div class="menu-item ">
@@ -39,10 +39,11 @@
                     </div>
                 </div>
                 <div class="cart">
-                    <router-link class="menu-item " to="/cart">
-                        <div class="cart-icon">
+                    {{ cartVis }}
+                    <router-link class="menu-item cart" to="/cart">
+                        <div class="cart-icon" @click="catrVisevent">
                             <img class="icon active" src="@/assets/svg/cart_w.svg"/>
-                            <img class="icon empty" src="@/assets/svg/cart_g.svg"/>
+                            <img class="icon empty " src="@/assets/svg/cart_g.svg"/>
                             <div class="cart-value">3</div>
                         </div>
                     </router-link>
@@ -66,8 +67,13 @@
 <script>
 export default {
   name: 'HeaderComp',
+  data(){
+    return{
+        catrVis: false
+    }
+  },
   mounted () {
-    const mobileMenuButton = document.querySelector('button')
+   const mobileMenuButton = document.querySelector('button')
     const body = document.body
     mobileMenuButton.onclick = function () {
         mobileMenuButton.classList.toggle('checked')
@@ -75,10 +81,37 @@ export default {
         body.classList.toggle('overflow')
         return null
     }
+    const menuitems = document.querySelectorAll('.menu-item')
+    menuitems.forEach(item=>{
+        item.classList.remove('checked')
+        item.onclick = function () {
+            const menuitems = document.querySelectorAll('.menu-item')
+            menuitems.forEach(item=>{
+                item.classList.remove('checked')
+            })
+            item.classList.add('checked')
+            if (item.classList.contains('cart')){
+                const icons = document.querySelectorAll('.cart-icon .icon')
+                console.log(icons)
+                icons[0].classList.add('emty')
+                icons[0].classList.remove('active')
+                icons[1].classList.add('active')
+                icons[1].classList.remove('emty')
+            } else{
+                const icons = document.querySelectorAll('.cart-icon .icon')
+                console.log(icons)
+                icons[1].classList.add('emty')
+                icons[1].classList.remove('active')
+                icons[0].classList.add('active')
+                icons[0].classList.remove('emty')
+            }
+        }
+    })
+
   },
   mathods: {
-    mobileClick () {
-      console.log('===========')
+    catrVisevent () {
+        console.log('===========')
     }
   }
 }
