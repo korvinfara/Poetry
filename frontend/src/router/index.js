@@ -9,7 +9,7 @@ import BooksView from '../views/BooksView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import CartView from '../views/CartView.vue'
 import PoemsItemView from '../views/PoemsItemView.vue'
-
+import PoemsCollectionView from '../views/PoemsCollectionView.vue'
 import GalleryItemView from '../views/GalleryItemView.vue'
 const routes = [
   {
@@ -58,7 +58,12 @@ const routes = [
     component: PoemsItemView
   },
   {
-    path: '/gallery-item',
+    path: '/poems-collection',
+    name: 'poems-item',
+    component: PoemsCollectionView
+  },
+  {
+    path: '/gallery-item/:id',
     name: 'gallery-item',
     component: GalleryItemView
   }

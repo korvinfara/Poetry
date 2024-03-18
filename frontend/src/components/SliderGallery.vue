@@ -475,11 +475,12 @@
         <button @click="slideNext" class="slider__btn slider__btn_next">
             <img class="icon one" src="@/assets/svg/next_g.svg">
             <img class="icon two" src="@/assets/svg/next_y.svg">
+           
         </button>
   </template>
   <script>
     // Import Swiper Vue.js components
-    import { Swiper, SwiperSlide, useSwiper  } from 'swiper/vue';
+    import { Swiper, SwiperSlide, useSwiper, useSwiperSlide   } from 'swiper/vue';
     import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
     // Import Swiper styles
@@ -490,46 +491,54 @@
    
     
     export default {
-      components: {
-        Swiper,
-        SwiperSlide,
-      },
-      setup() {
-        const onSwiper = (swiper) => {
-        };
-        const onSlideChange = (e) => {
-        };
+  
+        components: {
+            Swiper,
+            SwiperSlide,
+        },
+        setup() {
+            const swiperSlide = useSwiperSlide();
+            const onSwiper = (swiper) => {
+            };
+            const onSlideChange = (e) => {
+            };
 
         return {
           onSwiper,
           onSlideChange,
-          modules: [Navigation, Pagination, Scrollbar, A11y],
+          modules: [ Navigation, Pagination, Scrollbar, A11y ],
           
         };
       },
-      data(){
-        return{
-            swiper: null
-        }
-      },
-      mounted(){
-        this.swiper = document.querySelector(".swiper").swiper;
-        console.log(this.swiper)
-     
-      },
-      methods:{
-        onSlideChange(e){
-          this.$emit('currindex', e.activeIndex)
+        props: {
+                id: String
+            },
+        data(){
+            return{
+                swiper: null
+            }
         },
-        slideNext(){
-            this.swiper.slideNext()
+        created(){
+            
         },
-        slidePrev(){
-            this.swiper.slidePrev()
+        mounted(){
+            this.swiper = document.querySelector(".swiper").swiper;
+            this.swiper.slideTo(this.$route.params.id - 1)
+         
+        },
+        methods:{
+            onSlideChange(e){
+                const index = e.activeIndex + 1
+                this.$emit('setCurrIndex', index)
+                this.$router.push({ name: 'gallery-item', params: { id: index }})             
+            },
+            slideNext(){
+                this.swiper.slideNext()
+            },
+            slidePrev(){
+                this.swiper.slidePrev()
+            }
         }
-
-      }
-  
     };
   </script>
   <style >

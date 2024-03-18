@@ -10,7 +10,7 @@
                         <div class="module-title">
                             <h2 class="title">«Экология Сознания»</h2>
                             <div class="counter">
-                                <span>{{  currIndex}}</span>/<span>10</span>
+                                <span>{{ currIndex }}</span>/<span>10</span>
                             </div>
                         </div>
                         <a class="button primary green" href="">
@@ -21,7 +21,7 @@
                     <div class="module-content">
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper">
-                               <Slider @currindex="setCurrIndex" class="slider__items"/>
+                               <Slider :currIndex="currIndex" @setCurrIndex="setCurrIndex" class="slider__items"/>
                             
                                
                             </div>
@@ -36,23 +36,27 @@
 import Slider from '../components/SliderGallery.vue'
 
 export default { 
+    name: 'GallaryItemView',
 
-  name: 'GallaryItemView',
-
-  components: {
-    Slider
-  },
-  props: {
-    msg: String
-  },
-  data(){
-    return {
-        currIndex: 1
-    }
+    components: {
+        Slider
+    },
+    props: {
+        msg: String
+    },
+    data(){
+        return {
+            currIndex: 1
+        }
+    },
+    created(){
+        console.log(this.$route.params.id);
+        this.currIndex = this.$route.params.id
     },
     methods:{
         setCurrIndex(index){
-            this.currIndex = index + 1
+            this.currIndex = index;
+
         }
     }  
 }

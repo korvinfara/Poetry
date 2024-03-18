@@ -1,9 +1,7 @@
 <template>
-    {{ data }} 
     <div class="slider primary index" data-slider="itc-slider" data-loop="true">
             <div class="slider__wrapper">
                 <Slider class="slider__items"/>
-           
                 <button class="slider__btn slider__btn_prev">
                     <img src="@/assets/svg/prev_y.svg">
                 </button>
@@ -27,7 +25,7 @@
                     <div class="module-content">
                         <div class="grid paintings">
                             <div class="column">
-                                <a class="item painting item-01" href="#">
+                                <router-link class="item painting item-01" to="/gallery-item/1">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_01.jpg" loading="lazy"/>
                                     </div>
@@ -52,8 +50,8 @@
                                             <div>Я их помню всех</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-06" href="#">
+                                </router-link>
+                                <router-link class="item painting item-06" to="/gallery-item/2">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_06.jpg" loading="lazy"/>
                                     </div>
@@ -96,8 +94,8 @@
                                             <div>Что в тебе разбудит кровь</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-09" href="#">
+                                </router-link>
+                                <router-link class="item painting item-09" to="/gallery-item/3">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_09.jpg" loading="lazy"/>
                                     </div>
@@ -128,10 +126,10 @@
                                             <div>Быть дают собой</div>
                                         </div>
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
                             <div class="column">
-                                <a class="item painting item-02" href="#">
+                                <router-link class="item painting item-02" to="/gallery-item/4">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_02.jpg" loading="lazy"/>
                                     </div>
@@ -164,8 +162,8 @@
                                             <div>Надо всеми кого пока нет</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-08" href="#">
+                                </router-link>
+                                <router-link class="item painting item-08" to="/gallery-item/5">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_08.jpg" loading="lazy"/>
                                     </div>
@@ -217,8 +215,8 @@
                                             <div>ЕСТЬ ПОКАЗАТЕЛЬ СКОЛЬ БЕЗДУМНЫ МЫ</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-07" href="#">
+                                </router-link>
+                                <router-link class="item painting item-07" to="/gallery-item/6">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_07.jpg" loading="lazy"/>
                                     </div>
@@ -238,8 +236,8 @@
                                             <div>Непривычностью перемен</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-05" href="#">
+                                </router-link>
+                                <router-link class="item painting item-05" to="/gallery-item/7">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_05.jpg" loading="lazy"/>
                                     </div>
@@ -267,10 +265,10 @@
                                             <div>Как знать что я тебе скажу</div>
                                         </div>
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
                             <div class="column">
-                                <a class="item painting item-04" href="#">
+                                <router-link class="item painting item-04" to="/gallery-item/8">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_04.jpg" loading="lazy"/>
                                     </div>
@@ -280,8 +278,8 @@
                                             <div>Насколько в состоянии простить</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-03" href="#">
+                                </router-link>
+                                <router-link class="item painting item-03" to="/gallery-item/9">
                                     <div class="painting-image">
                                         <img class="image" src="@/assets/jpg/picture_03.jpg" loading="lazy"/>
                                     </div>
@@ -303,10 +301,10 @@
                                             <div>Я являюсь им</div>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item painting item-10" href="#">
+                                </router-link>
+                                <router-link class="item painting item-10" to="/gallery-item/10">
                                     <div class="painting-image">
-                                        <img class="image" src="@/assets/jpg/picture_10.jpg"/>
+                                <img class="image" src="@/assets/jpg/picture_10.jpg"/>
                                     </div>
                                     <div class="painting-text">
                                         <div class="align">
@@ -334,14 +332,14 @@
                                             <div>замолчал</div>
                                         </div>
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper">
                                 <div class="slider__items" style="">
                                     <div class="slider__item painting item-01" style="">
-                                        <a class="item painting item-01" href="#">
+                                        <router-link class="item painting item-01" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_01.jpg" loading="lazy">
                                             </div>
@@ -366,10 +364,10 @@
                                                     <div>Я их помню всех</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-02 slider__item_active" style="">
-                                        <a class="item painting item-06" href="#">
+                                        <router-link class="item painting item-06" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_06.jpg" loading="lazy">
                                             </div>
@@ -412,10 +410,10 @@
                                                     <div>Что в тебе разбудит кровь</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-03" style="">
-                                        <a class="item painting item-09" href="#">
+                                        <router-link class="item painting item-09" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_09.jpg">
                                             </div>
@@ -446,10 +444,10 @@
                                                     <div>Быть дают собой</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-04" style="">
-                                        <a class="item painting item-02" href="#">
+                                        <router-link class="item painting item-02" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_02.jpg">
                                             </div>
@@ -482,10 +480,10 @@
                                                     <div>Надо всеми кого пока нет</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-05" style="">
-                                        <a class="item painting item-08" href="#">
+                                        <router-link class="item painting item-08" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_08.jpg">
                                             </div>
@@ -537,10 +535,10 @@
                                                     <div>ЕСТЬ ПОКАЗАТЕЛЬ СКОЛЬ БЕЗДУМНЫ МЫ</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-06" style="">
-                                        <a class="item painting item-07" href="#">
+                                        <router-link class="item painting item-07" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_07.jpg">
                                             </div>
@@ -560,10 +558,10 @@
                                                     <div>Непривычностью перемен</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-07" style="">
-                                        <a class="item painting item-05" href="#">
+                                        <router-link class="item painting item-05" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_05.jpg">
                                             </div>
@@ -591,10 +589,10 @@
                                                     <div>Как знать что я тебе скажу</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-08" style="">
-                                        <a class="item painting item-04" href="#">
+                                        <router-link class="item painting item-04" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_04.jpg">
                                             </div>
@@ -604,10 +602,10 @@
                                                     <div>Насколько в состоянии простить</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-09" style="">
-                                        <a class="item painting item-10" href="#">
+                                        <router-link class="item painting item-10" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_10.jpg">
                                             </div>
@@ -637,10 +635,10 @@
                                                     <div>замолчал</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item painting item-10" style="">
-                                        <a class="item painting item-03" href="#">
+                                        <router-link class="item painting item-03" to="#">
                                             <div class="painting-image">
                                                 <img class="image" src="@/assets/jpg/picture_03.jpg">
                                             </div>
@@ -662,7 +660,7 @@
                                                     <div>Я являюсь им</div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                                 <button class="slider__btn slider__btn_prev">
@@ -689,10 +687,10 @@
                         </div>
                     </div>
                     <div class="module-more">
-                        <a class="link-more" href="/gallery">
+                        <router-link class="link-more" to="/gallery">
                             <div class="text">Вся галерея</div>
                             <img class="icon" src="@/assets/svg/more.svg"/>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -710,7 +708,7 @@
                             <div class="slider__wrapper">
                                 <div class="slider__items grid texts" style="">
                                     <div class="slider__item text item-01 slider__item_active" style="">
-                                        <a class="item text item-01" href="#">
+                                        <router-link class="item text item-01" to="/poems-item">
                                             <div class="align">
                                                 <div>И смех и грех</div>
                                                 <div>Ты жизнь убил на то</div>
@@ -720,29 +718,29 @@
                                                 <div>Причём понятья эти разделил</div>
                                                 <div>Чем очень сильно удивил</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-02" style="">
-                                        <a class="item text item-02" href="#">
+                                        <router-link class="item text item-02" to="/poems-item">
                                             <div class="align">
                                                 <div>Мысль не видна</div>
                                                 <div>Но виден результат</div>
                                                 <div>Которому ты рад</div>
                                                 <div>Или не рад</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-03" style="">
-                                        <a class="item text item-03" href="#">
+                                        <router-link class="item text item-03" to="/poems-item">
                                             <div class="align">
                                                 <div>Для каждого найдётся искушенье</div>
                                                 <div>Вопрос лишь в том</div>
                                                 <div>Готов ли к искупленью</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-04" style="">
-                                        <a class="item text item-04" href="#">
+                                        <router-link class="item text item-04" to="/poems-item">
                                             <div class="align">
                                                 <div>Любовь</div>
                                                 <div>Это щедрый Божественный дар</div>
@@ -754,19 +752,19 @@
                                                 <div>Пожалуйста</div>
                                                 <div>С кучей проблем</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-05" style="">
-                                        <a class="item text item-05" href="#">
+                                        <router-link class="item text item-05" to="/poems-item">
                                             <div class="align">
                                                 <div>Коль чувства только чистые в Душе</div>
                                                 <div>То ты не здесь ещё</div>
                                                 <div>Иль там уже</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-06" style="">
-                                        <a class="item text item-06" href="#">
+                                        <router-link class="item text item-06" to="/poems-item">
                                             <div class="align">
                                                 <div>Огонь Души</div>
                                                 <div>Не подожжёт твой дом</div>
@@ -775,10 +773,10 @@
                                                 <div>Но дом холодный не пригоден для жилья</div>
                                                 <div>И вряд ли кто с тобой жить в этом доме будет</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-07" style="">
-                                        <a class="item text item-07" href="#">
+                                        <router-link class="item text item-07" to="/poems-item">
                                             <div class="align">
                                                 <div>Ты дружбу променял на сто рублей</div>
                                                 <div>Оправдываясь тем что был голодный</div>
@@ -786,20 +784,20 @@
                                                 <div>Грядущая зима</div>
                                                 <div>Пообещала быть весьма холодной</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-08" style="">
-                                        <a class="item text item-08" href="#">
+                                        <router-link class="item text item-08" to="/poems-item">
                                             <div class="align">
                                                 <div>Что либо объяснить тому кто Вас не слышит</div>
                                                 <div>Сложно</div>
                                                 <div>Кто слушать не желает</div>
                                                 <div>Не возможно</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-09" style="">
-                                        <a class="item text item-09" href="#">
+                                        <router-link class="item text item-09" to="/poems-item">
                                             <div class="align">
                                                 <div>Стараемся не видеть очевидное</div>
                                                 <div>Особенно когда оно обидное</div>
@@ -807,10 +805,10 @@
                                                 <div>Глупцы мы</div>
                                                 <div>Это очевидно</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-10" style="">
-                                        <a class="item text item-10" href="#">
+                                        <router-link class="item text item-10" to="/poems-item">
                                             <div class="align">
                                                 <div>Ты выше не продвинешься</div>
                                                 <div>Пока</div>
@@ -818,36 +816,36 @@
                                                 <div>Когда разгонишь облака с Сознанья</div>
                                                 <div>Тогда откроют Истинные Знанья</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-11" style="">
-                                        <a class="item text item-11" href="#">
+                                        <router-link class="item text item-11" to="/poems-item">
                                             <div class="align">
                                                 <div>Никто из нас понятья не имеет</div>
                                                 <div>Что отдаёт за то</div>
                                                 <div>Чем в данный миг владеет</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-12" style="">
-                                        <a class="item text item-12" href="#">
+                                        <router-link class="item text item-12" to="/poems-item">
                                             <div class="align">
                                                 <div>Картинки</div>
                                                 <div>Те что открывает зренье</div>
                                                 <div>Являют Суть</div>
                                                 <div>Коль есть прозренье</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item text item-13" style="">
-                                        <a class="item text item-13" href="#">
+                                        <router-link class="item text item-13" to="/poems-item">
                                             <div class="align">
                                                 <div>Другой молчит</div>
                                                 <div>Крича Душой</div>
                                                 <div>Ну что тут скажешь</div>
                                                 <div>Он иной</div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                                 <button class="slider__btn slider__btn_prev">
@@ -876,10 +874,10 @@
                         </div>
                     </div>
                     <div class="module-more">
-                        <a class="link-more" href="/poems">
+                        <router-link class="link-more" to="/poems-collections">
                             <div class="text">Весь сборник</div>
                             <img class="icon" src="@/assets/svg/more.svg"/>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -892,7 +890,7 @@
                     <div class="module-content">
                         <div class="grid poems">
                             <div class="column">
-                                <a class="item poem poem-01" href="#">
+                                <router-link class="item poem poem-01" to="#">
                                     <div class="poem-text">
                                         <div>Из ветра я себе построил дом</div>
                                         <div>Есть пол и стены в доме том</div>
@@ -933,10 +931,10 @@
                                             <img class="icon" src="@/assets/svg/more.svg"/>
                                         </div>
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
                             <div class="column">
-                                <a class="item poem poem-02" href="#">
+                                <router-link class="item poem poem-02" to="#">
                                     <div class="poem-text">
                                         <div>Уключина скрипит</div>
                                         <div>Весло вихляет</div>
@@ -962,8 +960,8 @@
                                             <img class="icon" src="@/assets/svg/more.svg"/>
                                         </div>
                                     </div>
-                                </a>
-                                <a class="item poem poem-02" href="#">
+                                </router-link>
+                                <router-link class="item poem poem-02" to="#">
                                     <div class="poem-text">
                                         <div>Уключина скрипит</div>
                                         <div>Весло вихляет</div>
@@ -989,10 +987,10 @@
                                             <img class="icon" src="@/assets/svg/more.svg"/>
                                         </div>
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
                             <div class="column">
-                                <a class="item poem poem-03" href="#">
+                                <router-link class="item poem poem-03" to="#">
                                     <div class="poem-text">
                                         <div>Не совпадают наши планы</div>
                                         <div>С тем</div>
@@ -1027,14 +1025,14 @@
                                             <img class="icon" src="@/assets/svg/more.svg"/>
                                         </div>
                                     </div>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper">
                                 <div class="slider__items grid poems collection" style="">
                                     <div class="slider__item poem item-01 slider__item_active" style="">
-                                        <a class="item poem poem-01" href="#">
+                                        <router-link class="item poem poem-01" to="#">
                                             <div class="poem-text">
                                                 <div>Из ветра я себе построил дом</div>
                                                 <div>Есть пол и стены в доме том</div>
@@ -1075,10 +1073,10 @@
                                                     <img class="icon" src="@/assets/svg/more.svg"/>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item poem item-02" style="">
-                                        <a class="item poem poem-02" href="#">
+                                        <router-link class="item poem poem-02" to="#">
                                             <div class="poem-text">
                                                 <div>Уключина скрипит</div>
                                                 <div>Весло вихляет</div>
@@ -1104,10 +1102,10 @@
                                                     <img class="icon" src="@/assets/svg/more.svg"/>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item poem item-03" style="">
-                                        <a class="item poem poem-02" href="#">
+                                        <router-link class="item poem poem-02" to="#">
                                             <div class="poem-text">
                                                 <div>Уключина скрипит</div>
                                                 <div>Весло вихляет</div>
@@ -1133,10 +1131,10 @@
                                                     <img class="icon" src="@/assets/svg/more.svg"/>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item poem item-04" style="">
-                                        <a class="item poem poem-03" href="#">
+                                        <router-link class="item poem poem-03" to="#">
                                             <div class="poem-text">
                                                 <div>Не совпадают наши планы</div>
                                                 <div>С тем</div>
@@ -1171,7 +1169,7 @@
                                                     <img class="icon" src="@/assets/svg/more.svg"/>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                                 <button class="slider__btn slider__btn_prev">
@@ -1192,10 +1190,10 @@
                         </div>
                     </div>
                     <div class="module-more">
-                        <a class="link-more" href="/poems">
+                        <router-link class="link-more" to="/poems">
                             <div class="text">Все сборники</div>
                             <img class="icon" src="@/assets/svg/more.svg"/>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -1207,34 +1205,34 @@
                             <div class="slider__wrapper">
                                 <div class="slider__items grid books" style="">
                                     <div class="slider__item item-01 slider__item_active" style="">
-                                        <a class="item book" href="#">
+                                        <router-link class="item book" to="#">
                                             <img class="book-image" src="@/assets/jpg/book01---Слова-рождённые-душой_800.jpg"/>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item item-02" style="">
-                                        <a class="item book" href="#">
+                                        <router-link class="item book" to="#">
                                             <img class="book-image" src="@/assets/jpg/book02---поэтические-полотна_800.jpg"/>
-                                        </a>
+                                        </router-link>
                                     </div>
-                                    <div class="slider__item item-03" style="">
-                                        <a class="item book" href="#">
+                                    <div class="slider__item item-03" to="">
+                                        <router-link class="item book" to="#">
                                             <img class="book-image" src="@/assets/jpg/book03_В_спираль_закрученная_мысль_800.jpg"/>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item item-04" style="">
-                                        <a class="item book" href="#">
+                                        <router-link class="item book" to="#">
                                             <img class="book-image" src="@/assets/jpg/book04---Звездопад-на-каждый-день_800.jpg"/>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item item-04" style="">
-                                        <a class="item book" href="#">
+                                        <router-link class="item book" to="#">
                                             <img class="book-image" src="@/assets/jpg/book05---Директория-любви_800.jpg"/>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="slider__item item-04" style="">
-                                        <a class="item book" href="#">
+                                        <router-link class="item book" to="#">
                                             <img class="book-image" src="@/assets/jpg/book06---Знакомьтесь-это-мы_800.jpg"/>
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                                 <button class="slider__btn slider__btn_prev">
@@ -1257,10 +1255,10 @@
                         </div>
                     </div>
                     <div class="module-more">
-                        <a class="link-more" href="/gallery">
+                        <router-link class="link-more" to="/gallery">
                             <div class="text">Вся галерея</div>
                             <img class="icon" src="@/assets/svg/more.svg"/>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
