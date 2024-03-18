@@ -62,33 +62,33 @@ img {
 }
 @font-face {
     font-family: 'Noto_Serif';
-    src: url(/fonts/Noto_Serif.eot);
-    src: url(/fonts/Noto_Serif.eot?#iefix) format("embedded-opentype"), url(/fonts/Noto_Serif.woff) format("woff"), url(/fonts/Noto_Serif.ttf) format("truetype");
+    src: url(../fonts/Noto_Serif.eot);
+    src: url(../fonts/Noto_Serif.eot?#iefix) format("embedded-opentype"), url(../fonts/Noto_Serif.woff) format("woff"), url(../fonts/Noto_Serif.ttf) format("truetype");
 }
 @font-face {
     font-family: 'PT_Serif-Bold';
-    src: url(/fonts/PT_Serif-Bold.eot);
-    src: url(/fonts/PT_Serif-Bold.eot?#iefix) format("embedded-opentype"), url(/fonts/PT_Serif-Bold.woff) format("woff"), url(/fonts/PT_Serif-Bold.ttf) format("truetype");
+    src: url(../fonts/PT_Serif-Bold.eot);
+    src: url(../fonts/PT_Serif-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/PT_Serif-Bold.woff) format("woff"), url(../fonts/PT_Serif-Bold.ttf) format("truetype");
 }
 @font-face {
     font-family: 'PT_Serif-Bold';
-    src: url(/fonts/PT_Serif-Bold.eot);
-    src: url(/fonts/PT_Serif-Bold.eot?#iefix) format("embedded-opentype"), url(/fonts/PT_Serif-Bold.woff) format("woff"), url(/fonts/PT_Serif-Bold.ttf) format("truetype");
+    src: url(../fonts/PT_Serif-Bold.eot);
+    src: url(../fonts/PT_Serif-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/PT_Serif-Bold.woff) format("woff"), url(../fonts/PT_Serif-Bold.ttf) format("truetype");
 }
 @font-face {
     font-family: 'PT_Serif-BoldItalic';
-    src: url(/fonts/PT_Serif-BoldItalic.eot);
-    src: url(/fonts/PT_Serif-BoldItalic.eot?#iefix) format("embedded-opentype"), url(/fonts/PT_Serif-BoldItalic.woff) format("woff"), url(/fonts/PT_Serif-BoldItalic.ttf) format("truetype");
+    src: url(../fonts/PT_Serif-BoldItalic.eot);
+    src: url(../fonts/PT_Serif-BoldItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/PT_Serif-BoldItalic.woff) format("woff"), url(../fonts/PT_Serif-BoldItalic.ttf) format("truetype");
 }
 @font-face {
     font-family: 'PT_Serif-Italic';
-    src: url(/fonts/PT_Serif-Italic.eot);
-    src: url(/fonts/PT_Serif-Italic.eot?#iefix) format("embedded-opentype"), url(/fonts/PT_Serif-Italic.woff) format("woff"), url(/fonts/PT_Serif-Italic.ttf) format("truetype");
+    src: url(../fonts/PT_Serif-Italic.eot);
+    src: url(../fonts/PT_Serif-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/PT_Serif-Italic.woff) format("woff"), url(../fonts/PT_Serif-Italic.ttf) format("truetype");
 }
 @font-face {
     font-family: 'PT_Serif-Regular';
-    src: url(/fonts/PT_Serif-Regular.eot);
-    src: url(/fonts/PT_Serif-Regular.eot?#iefix) format("embedded-opentype"), url(/fonts/PT_Serif-Regular.woff) format("woff"), url(/fonts/PT_Serif-Regular.ttf) format("truetype");
+    src: url(../fonts/PT_Serif-Regular.eot);
+    src: url(../fonts/PT_Serif-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/PT_Serif-Regular.woff) format("woff"), url(../fonts/PT_Serif-Regular.ttf) format("truetype");
 }
 .noto {
     font-family: 'Noto_Serif';

@@ -19,11 +19,11 @@
             </button>
             <div class="menu" id="primary-menu">
                 <div class="menu-list">
-                    <div class="menu-item ">
-                        <router-link class="item-link" to="/about">о творчестве</router-link>
+                    <div class="menu-item checked">
+                        <router-link class="item-link " to="/about">о творчестве</router-link>
                     </div>
                     <div class="menu-item ">
-                        <router-link class="item-link" to="/gallery">галерея</router-link>
+                        <router-link class="item-link " to="/gallery">галерея</router-link>
                     </div>
                     <div class="menu-item ">
                         <router-link class="item-link" to="/poems">поэзия</router-link>
@@ -69,12 +69,12 @@ export default {
   mounted () {
     const mobileMenuButton = document.querySelector('button')
     const body = document.body
-    console.log('>>', mobileMenuButton)
     mobileMenuButton.onclick = function () {
-    mobileMenuButton.classList.toggle('checked')
-    body.classList.toggle('overflow')
-    return null
-}
+        mobileMenuButton.classList.toggle('checked')
+        console.log('--**',mobileMenuButton.classList)
+        body.classList.toggle('overflow')
+        return null
+    }
   },
   mathods: {
     mobileClick () {

@@ -1,4 +1,5 @@
-const mobileMenuButton = document.querySelector('button')
+
+const mobileMenuButton = document.querySelector('.button .mobile')
 const body = document.body
 console.log('>>', mobileMenuButton)
 mobileMenuButton.onclick = function () {
