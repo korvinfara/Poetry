@@ -1,18 +1,19 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-undef */
 import { defineStore } from 'pinia'
+import { poems } from '@/store/data/poems'
+import { collections } from '@/store/data/collections'
+
+console.log(poems)
 
 export const useStore = defineStore('counter', {
   state: () => ({
-    characters: [
-      { name: 'wsws', age: '121212' },
-      { name: '1112', age: '1dds' }
-    ],
+    allPoems: poems,
     searchName: null
   }),
 
   getters: {
-    getAll: (state) => state.characters
+    getAll: (state) => state.allPoems
   },
 
   actions: {

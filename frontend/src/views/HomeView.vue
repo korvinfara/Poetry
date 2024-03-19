@@ -1,4 +1,5 @@
 <template>
+    <span>{{ data[0].text }}</span>
     <div class="slider primary index" data-slider="itc-slider" data-loop="true">
             <router-link class="slider__wrapper" to="/events">
                 <Slider class="slider__items"/>
