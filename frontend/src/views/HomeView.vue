@@ -1,6 +1,6 @@
 <template>
     <div class="slider primary index" data-slider="itc-slider" data-loop="true">
-            <div class="slider__wrapper">
+            <router-link class="slider__wrapper" to="/events">
                 <Slider class="slider__items"/>
                 <button class="slider__btn slider__btn_prev">
                     <img src="@/assets/svg/prev_y.svg">
@@ -13,7 +13,7 @@
                     <li class="slider__indicator" data-slide-to="1"></li>
                     <li class="slider__indicator" data-slide-to="2"></li>
                 </ol>
-            </div>
+            </router-link>
         </div>
         <div class="main">
             <div class="module paintings">
@@ -708,7 +708,7 @@
                             <div class="slider__wrapper">
                                 <div class="slider__items grid texts" style="">
                                     <div class="slider__item text item-01 slider__item_active" style="">
-                                        <router-link class="item text item-01" to="/poems-item">
+                                        <router-link class="item text item-01" to="/poems-item/1">
                                             <div class="align">
                                                 <div>И смех и грех</div>
                                                 <div>Ты жизнь убил на то</div>
@@ -721,7 +721,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-02" style="">
-                                        <router-link class="item text item-02" to="/poems-item">
+                                        <router-link class="item text item-02" to="/poems-item/2">
                                             <div class="align">
                                                 <div>Мысль не видна</div>
                                                 <div>Но виден результат</div>
@@ -731,7 +731,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-03" style="">
-                                        <router-link class="item text item-03" to="/poems-item">
+                                        <router-link class="item text item-03" to="/poems-item/3">
                                             <div class="align">
                                                 <div>Для каждого найдётся искушенье</div>
                                                 <div>Вопрос лишь в том</div>
@@ -740,7 +740,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-04" style="">
-                                        <router-link class="item text item-04" to="/poems-item">
+                                        <router-link class="item text item-04" to="/poems-item/4">
                                             <div class="align">
                                                 <div>Любовь</div>
                                                 <div>Это щедрый Божественный дар</div>
@@ -755,7 +755,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-05" style="">
-                                        <router-link class="item text item-05" to="/poems-item">
+                                        <router-link class="item text item-05" to="/poems-item/5">
                                             <div class="align">
                                                 <div>Коль чувства только чистые в Душе</div>
                                                 <div>То ты не здесь ещё</div>
@@ -764,7 +764,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-06" style="">
-                                        <router-link class="item text item-06" to="/poems-item">
+                                        <router-link class="item text item-06" to="/poems-item/6">
                                             <div class="align">
                                                 <div>Огонь Души</div>
                                                 <div>Не подожжёт твой дом</div>
@@ -776,7 +776,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-07" style="">
-                                        <router-link class="item text item-07" to="/poems-item">
+                                        <router-link class="item text item-07" to="/poems-item/7">
                                             <div class="align">
                                                 <div>Ты дружбу променял на сто рублей</div>
                                                 <div>Оправдываясь тем что был голодный</div>
@@ -787,7 +787,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-08" style="">
-                                        <router-link class="item text item-08" to="/poems-item">
+                                        <router-link class="item text item-08" to="/poems-item/8">
                                             <div class="align">
                                                 <div>Что либо объяснить тому кто Вас не слышит</div>
                                                 <div>Сложно</div>
@@ -797,7 +797,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-09" style="">
-                                        <router-link class="item text item-09" to="/poems-item">
+                                        <router-link class="item text item-09" to="/poems-item/9">
                                             <div class="align">
                                                 <div>Стараемся не видеть очевидное</div>
                                                 <div>Особенно когда оно обидное</div>
@@ -808,7 +808,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-10" style="">
-                                        <router-link class="item text item-10" to="/poems-item">
+                                        <router-link class="item text item-10" to="/poems-item/10">
                                             <div class="align">
                                                 <div>Ты выше не продвинешься</div>
                                                 <div>Пока</div>
@@ -819,7 +819,7 @@
                                         </router-link>
                                     </div>
                                     <div class="slider__item text item-11" style="">
-                                        <router-link class="item text item-11" to="/poems-item">
+                                        <router-link class="item text item-11" to="/poems-item/11">
                                             <div class="align">
                                                 <div>Никто из нас понятья не имеет</div>
                                                 <div>Что отдаёт за то</div>

@@ -19,29 +19,29 @@
             </button>
             <div class="menu" id="primary-menu">
                 <div class="menu-list">
-                    <div class="menu-item">
-                        <router-link class="item-link " to="/about">о творчестве</router-link>
-                    </div>
-                    <div class="menu-item ">
-                        <router-link class="item-link " to="/gallery">галерея</router-link>
-                    </div>
-                    <div class="menu-item ">
-                        <router-link class="item-link" to="/poems">поэзия</router-link>
-                    </div>
-                    <div class="menu-item ">
-                        <router-link class="item-link" to="/events">события</router-link>
-                    </div>
-                    <div class="menu-item ">
-                        <router-link class="item-link" to="/books">книги</router-link>
-                    </div>
-                    <div class="menu-item ">
-                        <router-link class="item-link" to="/contacts">контакты</router-link>
-                    </div>
+                    <router-link class="menu-item" to="/about">
+                        <div  class="item-link">о творчестве</div>
+                    </router-link>
+                    <router-link class="menu-item" to="/gallery">
+                        <div  class="item-link">галерея</div>
+                    </router-link>
+                    <router-link class="menu-item" to="/poems">
+                        <div   class="item-link">поэзия</div>
+                    </router-link>
+                    <router-link class="menu-item" to="/events">
+                        <div   class="item-link">события</div>
+                    </router-link>
+                    <router-link class="menu-item" to="/books">
+                        <div  class="item-link">книги</div>
+                    </router-link>
+                    <router-link class="menu-item" to="/contacts">
+                        <div  class="item-link" >контакты</div>
+                    </router-link>
                 </div>
                 <div class="cart">
                     {{ cartVis }}
                     <router-link class="menu-item cart" to="/cart">
-                        <div class="cart-icon" @click="catrVisevent">
+                        <div class="cart-icon">
                             <img class="icon active" src="@/assets/svg/cart_w.svg"/>
                             <img class="icon empty " src="@/assets/svg/cart_g.svg"/>
                             <div class="cart-value">3</div>
@@ -69,7 +69,7 @@ export default {
   name: 'HeaderComp',
   data(){
     return{
-        catrVis: false
+       rout: this.$route.path
     }
   },
   mounted () {
@@ -81,16 +81,18 @@ export default {
         body.classList.toggle('overflow')
         return null
     }
-    const menuitems = document.querySelectorAll('.menu-item')
-    menuitems.forEach(item=>{
-        item.classList.remove('checked')
-        item.onclick = function () {
-            const menuitems = document.querySelectorAll('.menu-item')
-            menuitems.forEach(item=>{
-                item.classList.remove('checked')
-            })
-            item.classList.add('checked')
-            if (item.classList.contains('cart')){
+
+  },
+  mathods: {
+    catrVisevent () {
+        console.log('===========')
+    },
+    beforeRouteUpdate(to, from, next) { console.log('|->', to, from)}
+  },
+  watch:{
+        $route(val, ws){
+            console.log('->', val.path, ws)
+            if (val.path =='/cart'){
                 const icons = document.querySelectorAll('.cart-icon .icon')
                 console.log(icons)
                 icons[0].classList.add('emty')
@@ -106,18 +108,11 @@ export default {
                 icons[0].classList.remove('emty')
             }
         }
-    })
-
-  },
-  mathods: {
-    catrVisevent () {
-        console.log('===========')
     }
-  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
 </style>

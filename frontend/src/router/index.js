@@ -5,12 +5,14 @@ import AboutView from '../views/AboutView.vue'
 import GalleryView from '../views/GalleryView.vue'
 import PoemsView from '../views/PoemsView.vue'
 import EventsView from '../views/EventsView.vue'
+import EventsItemView from '../views/EventsItemView.vue'
 import BooksView from '../views/BooksView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import CartView from '../views/CartView.vue'
 import PoemsItemView from '../views/PoemsItemView.vue'
 import PoemsCollectionView from '../views/PoemsCollectionView.vue'
 import GalleryItemView from '../views/GalleryItemView.vue'
+
 const routes = [
   {
     path: '/',
@@ -38,6 +40,11 @@ const routes = [
     component: EventsView
   },
   {
+    path: '/events-item/:id',
+    name: 'events-item',
+    component: EventsItemView
+  },
+  {
     path: '/books',
     name: 'books',
     component: BooksView
@@ -53,13 +60,13 @@ const routes = [
     component: CartView
   },
   {
-    path: '/poems-item',
+    path: '/poems-item/:id',
     name: 'poems-item',
     component: PoemsItemView
   },
   {
     path: '/poems-collection',
-    name: 'poems-item',
+    name: 'poems-collection',
     component: PoemsCollectionView
   },
   {
@@ -71,7 +78,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes, linkExactActiveClass: "checked my"
 })
 
 export default router
