@@ -4,9 +4,30 @@
       :space-between="0"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
-     
     >
-      <swiper-slide>
+      <swiper-slide v-for="(item, index) in data" :key="item.name">
+        <a class="slider__item item-01 slider__item_active" href="#" style="">
+                        <div class="banner">
+                            <div class="banner-image">
+                              <img :src="`./files/events/` + item.img" >
+                            </div>
+                            <div class="center">
+                                <div class="banner-text">
+                                  
+                                    <h2 class="title bold">{{item.name}}</h2>
+                                    <div class="text">
+                                      {{item.titel}}
+                                    </div>
+                                    <div class="location">
+                                        <img src="@/assets/svg/map_pointer.svg"/>
+                                        <div>{{item.titel}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+      </swiper-slide>
+      <!--<swiper-slide>
         <a class="slider__item item-01 slider__item_active" href="#" style="">
                         <div class="banner">
                             <div class="banner-image">
@@ -14,7 +35,8 @@
                             </div>
                             <div class="center">
                                 <div class="banner-text">
-                                    <h2 class="title bold">Игорь Булгаков. Поэтические полотна</h2>
+                                  
+                                    <h2 class="title bold">Игорь Булгаков. Поэтические полотна {{ data }}</h2>
                                     <div class="text">
                                         Тематический цикл «Экология Сознания». Синтез философии, живописи и поэзии.
                                     </div>
@@ -74,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-      </swiper-slide>
+      </swiper-slide>-->
     </swiper>
 
   </template>
@@ -88,13 +110,16 @@
     import 'swiper/css/navigation';
     import 'swiper/css/pagination';
     import 'swiper/css/scrollbar';
-  
+    import { useStore } from '../store/index'
+
     export default {
       components: {
         Swiper,
         SwiperSlide,
       },
       setup() {
+        const userStore = useStore()
+    
         const onSwiper = (swiper) => {
           console.log(swiper);
         };
@@ -105,7 +130,14 @@
           onSwiper,
           onSlideChange,
           modules: [Navigation, Pagination, Scrollbar, A11y],
+          userStore
         };
       },
+      data () {
+    return {
+      data: this.userStore.getEvents,
+
+    }
+  },
     };
   </script>

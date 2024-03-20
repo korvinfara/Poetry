@@ -1,19 +1,25 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable no-undef */
 import { defineStore } from 'pinia'
 import { poems } from '@/store/data/poems'
-import { collections } from '@/store/data/collections'
+import { collectionsPoems } from '@/store/data/collectionsPoems'
+import { paintings } from '@/store/data/paintings'
+import { gallery } from '@/store/data/gallery'
+import { events } from '@/store/data/events'
+import { books } from '@/store/data/books'
 
 console.log(poems)
 
 export const useStore = defineStore('counter', {
   state: () => ({
-    allPoems: poems,
-    searchName: null
+    poems: poems,
+    collectionsPoems: collectionsPoems,
+    paintings: paintings,
+    gallery: gallery,
+    events: events,
+    books: books
   }),
 
   getters: {
-    getAll: (state) => state.allPoems
+    getEvents: (state) => state.events
   },
 
   actions: {

@@ -1,5 +1,4 @@
 export const  gallery =  [
-  // «Экология созная»
   {
     name: 'Экология созная',
     forfard:`
@@ -13,10 +12,15 @@ export const  gallery =  [
 
     `,
     paintings: [
-      'picture_01.jpg.jpg',
-      'picture_02.jpg'
+      'picture_02.jpg',
+      'picture_03.jpg',
+      'picture_04.jpg',
+      'picture_05.jpg',
+      'picture_06.jpg',
+      'picture_07.jpg',
+      'picture_08.jpg',
+      'picture_09.jpg',
+      'picture_10.jpg',
     ] 
-  },
-
-
+  }
 ]
