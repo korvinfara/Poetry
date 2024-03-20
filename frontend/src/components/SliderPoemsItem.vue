@@ -11,7 +11,7 @@
     >
         <swiper-slide>
             <div class="slider__item item-01 slider__item_active" style="">
-                <a class="item poem" href="/poems-item">
+                <a class="item poem" href="/poems-item/1">
                     <div class="poem-text">
                         <div>И смех и грех</div>
                         <div>Ты жизнь убил на то</div>
@@ -26,7 +26,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="slider__item item-02" style="">
-                <a class="item poem" href="/poems-item">
+                <a class="item poem" href="/poems-item/2">
                     <div class="poem-text">
                         <div>Мысль не видна</div>
                         <div>Но виден результат</div>
@@ -38,7 +38,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="slider__item item-03" style="">
-                <a class="item poem" href="/poems-item">
+                <a class="item poem" href="/poems-item/2">
                     <div class="poem-text">
                         <div>Для каждого найдётся искушенье</div>
                         <div>Вопрос лишь в том</div>
@@ -49,7 +49,7 @@
         </swiper-slide>
         <swiper-slide>
             <div class="slider__item item-04" style="">
-                <a class="item poem" href="/poems-item">
+                <a class="item poem" href="/poems-item/4">
                     <div class="poem-text">
                         <div>Любовь</div>
                         <div>Это щедрый Божественный дар</div>
@@ -76,7 +76,7 @@
             </div>          
         </swiper-slide>
         <swiper-slide>
-        <div class="slider__item item-06" style="">
+            <div class="slider__item item-06" style="">
                 <a class="item poem" href="/poems-item">
                     <div class="poem-text">
                         <div>Огонь Души</div>

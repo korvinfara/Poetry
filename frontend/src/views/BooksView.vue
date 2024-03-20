@@ -12,21 +12,21 @@
                     <div class="module-content">
                         <div class="grid books page">
                             <div class="column">
-                                <a class="item book" href="/books-item">
+                                <a class="item book" href="/books-item/1">
                                     <div class="book-image">
                                         <img class="image" src="@/assets/jpg/book01---Слова-рождённые-душой_800.jpg"/>
                                     </div>
                                 </a>
                             </div>
                             <div class="column">
-                                <a class="item book" href="/books-item">
+                                <a class="item book" href="/books-item/2">
                                     <div class="book-image">
                                         <img class="image" src="@/assets/jpg/book02---поэтические-полотна_800.jpg"/>
                                     </div>
                                 </a>
                             </div>
                             <div class="column">
-                                <a class="item book" href="/books-item">
+                                <a class="item book" href="/books-item/3">
                                     <div class="book-image">
                                         <img class="image" src="@/assets/jpg/book03_В_спираль_закрученная_мысль_800.jpg"/>
                                     </div>

@@ -7,6 +7,7 @@ import PoemsView from '../views/PoemsView.vue'
 import EventsView from '../views/EventsView.vue'
 import EventsItemView from '../views/EventsItemView.vue'
 import BooksView from '../views/BooksView.vue'
+import BooksItemView from '../views/BooksItemView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import CartView from '../views/CartView.vue'
 import PoemsItemView from '../views/PoemsItemView.vue'
@@ -48,6 +49,11 @@ const routes = [
     path: '/books',
     name: 'books',
     component: BooksView
+  },
+  {
+    path: '/books-item/:id',
+    name: 'books-item',
+    component: BooksItemView
   },
   {
     path: '/contacts',

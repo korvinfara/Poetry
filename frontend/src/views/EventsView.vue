@@ -6,7 +6,7 @@
                     <div class="module-content">
                         <div class="grid events">
                             <div class="column">
-                                <a class="item event active" href="/events-item">
+                                <a class="item event active" href="/events-item/1">
                                     <div class="event-status">
                                         <div class="active">сейчас</div>
                                         <div class="archive">в архиве</div>
@@ -47,7 +47,7 @@
                                 </a>
                             </div>
                             <div class="column">
-                                <a class="item event archive" href="/events-item">
+                                <a class="item event archive" href="/events-item/2">
                                     <div class="event-status">
                                         <div class="active">сейчас</div>
                                         <div class="archive">в архиве</div>
@@ -80,7 +80,7 @@
                                 </a>
                             </div>
                             <div class="column">
-                                <a class="item event archive" href="/events-item">
+                                <a class="item event archive" href="/events-item/3">
                                     <div class="event-status">
                                         <div class="active">сейчас</div>
                                         <div class="archive">в архиве</div>
@@ -121,7 +121,7 @@
                                 </a>
                             </div>
                             <div class="column">
-                                <a class="item event archive" href="/events-item">
+                                <a class="item event archive" href="/events-item/4">
                                     <div class="event-status">
                                         <div class="active">сейчас</div>
                                         <div class="archive">в архиве</div>
