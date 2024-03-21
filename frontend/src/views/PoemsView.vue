@@ -498,10 +498,10 @@
         </div>
         <div class="module poems-slider">
             <div class="module-center">
-                <div class="module-line poem-02">
+                <div class="module-line poem-01">
                     <img class="image" src="@/assets/svg/poem_pic_03.svg">
                 </div>
-                <h2 class="module-title poem-02">
+                <h2 class="module-title poem-01">
                     «Директория любви»
                 </h2>
                 <div class="module-text">
@@ -523,7 +523,7 @@
                         <div class="slider__wrapper">
                             <div class="slider__items" style="">
                                 <div class="slider__item item-01 slider__item_active" style="">
-                                    <a class="item poem poem-02" href="/poems-item">
+                                    <a class="item poem poem-01" href="/poems-item">
                                         <div class="poem-text">
                                             <div>Из ветра я себе построил дом</div>
                                             <div>Есть пол и стены в доме том</div>
