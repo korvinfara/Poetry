@@ -133,11 +133,11 @@
           userStore
         };
       },
-      data () {
-    return {
-      data: this.userStore.getEvents,
+        data () {
+      return {
+        data: this.userStore.getEvents,
 
-    }
-  },
+      }
+    },
     };
   </script>

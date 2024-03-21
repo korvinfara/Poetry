@@ -76,7 +76,7 @@ const routes = [
     component: PoemsCollectionView
   },
   {
-    path: '/gallery-item/:id',
+    path: '/:gallery/:id',
     name: 'gallery-item',
     component: GalleryItemView
   }

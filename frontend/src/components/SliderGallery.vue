@@ -520,15 +520,16 @@
             
         },
         mounted(){
+            console.log(this.$route.params)
             this.swiper = document.querySelector(".swiper").swiper;
-            this.swiper.slideTo(this.$route.params.id - 1)
-         
+           // this.swiper.slideTo(this.$route.params.id - 1)
+            
         },
         methods:{
             onSlideChange(e){
                 const index = e.activeIndex + 1
                 this.$emit('setCurrIndex', index)
-                this.$router.push({ name: 'gallery-item', params: { id: index }})             
+                this.$router.push({ name: this.$route.params.gallery, params: { id: this.$route.params.id}})             
             },
             slideNext(){
                 this.swiper.slideNext()

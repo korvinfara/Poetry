@@ -1,5 +1,6 @@
 export const  collectionsPoems =  [
   {
+    id: 'starfall-for-every-day',
     name: 'Звездопад на каждый день',
     img: 'book_01.jpg',
     titel: `
@@ -40,6 +41,7 @@ export const  collectionsPoems =  [
     ]
   },
   {
+    id: 'thought-twisted-into-a-spiral',
     name: 'В спираль закрученная мысль',
     img: 'book_03.jpg',
     titel: `
@@ -113,6 +115,7 @@ export const  collectionsPoems =  [
     ]
   },
   {
+    id: 'directory-of-love',
     name: 'Директория любви',
     titel: `
       Тексты Игоря Яковлевича проникают в тайные движения души, раскрывают невыразимые чувства: 
@@ -132,6 +135,7 @@ export const  collectionsPoems =  [
     ]
   },
   {
+    id: 'meet-us-this-is-us',
     name: 'Знакомьтесь, это мы',
     titel: `
       Этой книгой я приглашаю читателей в увлекательное путешествие к самим себе

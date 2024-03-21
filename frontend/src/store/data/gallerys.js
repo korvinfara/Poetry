@@ -1,6 +1,8 @@
-export const  gallery =  [
-  {
-    name: 'Экология созная',
+export const  gallerys =  [
+  { 
+    id: 'ecology-of-consciousness',
+    name: 'Экология сознания',
+    titel: 'Авторский тематический цикл',
     forfard:`
       Синтез живописи и поэзии. Авторский тематический цикл доктора философии, поэта и живописца
       Игоря Булгакова (члена творческого Союза художников России, члена Союза писателей России)
@@ -12,8 +14,8 @@ export const  gallery =  [
 
     `,
     paintings: [
+      'picture_01.jpg',
       'picture_02.jpg',
-      'picture_03.jpg',
       'picture_04.jpg',
       'picture_05.jpg',
       'picture_06.jpg',
@@ -21,6 +23,8 @@ export const  gallery =  [
       'picture_08.jpg',
       'picture_09.jpg',
       'picture_10.jpg',
+      'picture_03.jpg',
+
     ] 
   }
 ]
