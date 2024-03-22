@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import VueScrollTo from "vue-scrollto";
 
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
@@ -83,8 +84,17 @@ const routes = [
 ]
 
 const router = createRouter({
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      VueScrollTo.scrollTo("#app", 500, { offset: savedPosition.y });
+      return savedPosition;
+    } else {
+      VueScrollTo.scrollTo("#app");
+    }
+  },
   history: createWebHistory(process.env.BASE_URL),
   routes, linkExactActiveClass: "checked my"
+
 })
 
 export default router
