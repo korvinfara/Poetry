@@ -2,7 +2,7 @@
    
 <div class="main">
     <div class="module paintings">
-        <div v-for="gallery in data" :key="gallery.id" class="module-center">
+        <div  class="module-center">
             <h2 class="module-title">«{{gallery.name}}»</h2>
             <div class="module-text">
                 <i>{{gallery.titel}}</i>
@@ -79,7 +79,7 @@ export default {
     data () {
         return {
             data: this.userStore.getPartGallerys(),
-            
+            gallery: this.data[0]
          }
     },
     mounted(){

@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="module-more">
-                        <router-link class="link-more" :to="`/`+ gallery.id +`/` + gallery.parts[0].img">
+                        <router-link class="link-more" :to="`/`+ gallery.id +`/` + gallery.paintings[0]">
                             <div class="text">Вся галерея</div>
                             <img class="icon" src="@/assets/svg/more.svg"/>
                         </router-link>
