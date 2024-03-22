@@ -47,19 +47,19 @@ export const useStore = defineStore('counter', {
 
       for(let i = index1; i <= count1; i++){
         let pic = this.paintings.find(elem=>elem.img == curGallery.paintings[i])
+        pic.poem =  this.addDivPoems(pic.poem)
         arr1.push(pic)
       }
       for(let i = index2; i <= count2; i++){
         let pic = this.paintings.find(elem=>elem.img == curGallery.paintings[i])
+        pic.poem =  this.addDivPoems(pic.poem)
         arr2.push(pic)
       }
       for(let i = index3; i <= count3; i++){
         let pic = this.paintings.find(elem=>elem.img == curGallery.paintings[i])
+        pic.poem =  this.addDivPoems(pic.poem)
         arr3.push(pic)
       }
-      console.log(arr1[0])
-      console.log(arr2)
-      console.log(arr3)
 
       curGallery.parts = [ arr1, arr2, arr3 ]
         
@@ -78,6 +78,7 @@ export const useStore = defineStore('counter', {
       let arr = [];
       curGallery.paintings.forEach(item=>{
         let pic = this.paintings.find(elem=>elem.img == item)
+        
         arr.push(pic)
       })
       curGallery.fullPaints = arr
@@ -102,6 +103,14 @@ export const useStore = defineStore('counter', {
       })
       curCollection.allPoems = arr
       return  curCollection
+    },
+    addDivPoems(poem){
+      let a = poem.slice(1)
+      let n = a.replace(/\n/g, '</div>')
+      let c = n.replace(/[А-Я]/g, '<div>$&')
+      console.log('=>', c )
+      return c
+
     }
   }
 })

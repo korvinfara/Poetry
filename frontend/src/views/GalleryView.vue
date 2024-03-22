@@ -22,24 +22,8 @@
                                         <img class="image" :src="`./files/gallery/` + item.img"  loading="lazy"/>
                                     </div>
                                     <div class="painting-text">
-                                        <div class="align">
-                                            <div>Как много времени</div>
-                                            <div>По меркам человечьим</div>
-                                            <div>Прошло с тех пор</div>
-                                            <div>Когда впервые</div>
-                                            <div>Увидел горы золотые</div>
-                                            <div>Материки и океанов гладь</div>
-                                            <div>Увидел</div>
-                                            <div>В первозданном виде</div>
-                                            <div>Всё то</div>
-                                            <div>Что нынче не узнать</div>
-                                            <div>&nbsp;</div>
-                                            <div>И ты</div>
-                                            <div>Народ сегодняшней Планеты</div>
-                                            <div>Ты стал иной</div>
-                                            <div>В отличие от тех</div>
-                                            <div>Которые собою заселяли Планету эту</div>
-                                            <div>Я их помню всех</div>
+                                        <div  class="align">
+                                            <div v-html="item.poem"></div>
                                         </div>
                                     </div>
                                 </router-link>
