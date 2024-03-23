@@ -1,7 +1,7 @@
 <template>
     <div class="slider primary index" data-slider="itc-slider" data-loop="true">
             <router-link class="slider__wrapper" to="/events">
-                <Slider class="slider__items"/>
+                <SliderBanner class="slider__items"/>
                 <button class="slider__btn slider__btn_prev">
                     <img src="@/assets/svg/prev_y.svg">
                 </button>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper gallery">
-                                <SliderMob :data = "galleryMob.fullPaints" :galleryId="gallery.id" class="gallery"/>
+                                <SliderGallery :data = "galleryMob.fullPaints" :galleryId="gallery.id" />
                             </div>
                         </div>
                     </div>
@@ -61,8 +61,8 @@
                     </div>
                     <div class="module-content">
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
-                            <div class="slider__wrapper collection ">
-                                <SliderPoemsHome :data="collection.allPoems" class="slider__items grid texts" />
+                            <div class="slider__wrapper collection">
+                                <SliderPoemsMob1 :data="collection.allPoems" class="slider__items grid texts" />
                             </div>
                         </div>
                     </div>
@@ -79,6 +79,7 @@
                 <div class="module-center">
                     <h2 class="module-title">И так далее...</h2>
                     <div class="module-text">
+                        
                         <i>Поэтические тексты Игоря Булгакова из разных сборников</i>
                     </div>
                     <div class="module-content">
@@ -126,7 +127,7 @@
                                         <div v-html="poems[3].poem.text"></div>
                                     </div>
                                     <div class="poem-link">
-                                        <div class="link-more" href="#">
+                                        <div class="link-more" :href="`/` + poems[3].collection.id + `/`+ 1">
                                             <div class="text">{{poems[3].collection.name}}</div>
                                             <img class="icon" src="@/assets/svg/more.svg"/>
                                         </div>
@@ -135,163 +136,8 @@
                             </div>
                         </div>
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
-                            <div class="slider__wrapper">
-                                <div class="slider__items grid poems collection" style="">
-                                    <div class="slider__item poem item-01 slider__item_active" style="">
-                                        <router-link class="item poem poem-01" to="#">
-                                            <div class="poem-text">
-                                                <div>Из ветра я себе построил дом</div>
-                                                <div>Есть пол и стены в доме том</div>
-                                                <div>Есть потолок и небольшой балкон</div>
-                                                <div>Обои в доме небосводу в тон</div>
-                                                <div>Есть лестница и выход на чердак</div>
-                                                <div>Вполне приличный дом</div>
-                                                <div>Но вот беда</div>
-                                                <div>Сквозняк</div>
-                                                <div>&nbsp;</div>
-                                                <div>Решил проконопатить дом туманом</div>
-                                                <div>Не вышло ничего</div>
-                                                <div>Туман был рваным</div>
-                                                <div>Пытался щели залатать водой</div>
-                                                <div>Не получилось</div>
-                                                <div>Дождик был грибной</div>
-                                                <div>Старался в трещину приладить солнца луч</div>
-                                                <div>Тот спрятался за стаей плотных туч</div>
-                                                <div>Пока перебирал ремонтный материал</div>
-                                                <div>И ветер стих</div>
-                                                <div>И дом пропал</div>
-                                                <div>&nbsp;</div>
-                                                <div>С тех пор живу в дожде</div>
-                                                <div>Когда есть дождь</div>
-                                                <div>Живу в тумане</div>
-                                                <div>Что окутал поле</div>
-                                                <div>И в солнечном луче живу</div>
-                                                <div>Живу во всём живущем в море</div>
-                                                <div>Живу в заре и в звёздной тишине</div>
-                                                <div>Живу во всём что землю окружает</div>
-                                                <div>И лучшего не нужно дома мне</div>
-                                                <div>Да кстати</div>
-                                                <div>Лучшего и не бывает</div>
-                                            </div>
-                                            <div class="poem-link">
-                                                <div class="link-more" href="#">
-                                                    <div class="text">В спираль закрученная мысль</div>
-                                                    <img class="icon" src="@/assets/svg/more.svg"/>
-                                                </div>
-                                            </div>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item poem item-02" style="">
-                                        <router-link class="item poem poem-02" to="#">
-                                            <div class="poem-text">
-                                                <div>Уключина скрипит</div>
-                                                <div>Весло вихляет</div>
-                                                <div>Сочится через дно вода</div>
-                                                <div>А я гребу того не замечая</div>
-                                                <div>Гребу я в будущее из вчера</div>
-                                                <div>Гребу сегодня</div>
-                                                <div>Что есть только мочи</div>
-                                                <div>Гребу упорно</div>
-                                                <div>Мне хватает сил</div>
-                                                <div>А за бортом в ночи луна хохочет</div>
-                                                <div>Которую я чуть ни задавил</div>
-                                                <div>По звёздам Мирового Океана</div>
-                                                <div>Я бью веслом</div>
-                                                <div>Взрывая гладь воды</div>
-                                                <div>Мне б протрезветь</div>
-                                                <div>А я босой и пьяный</div>
-                                                <div>От счастья абсолютной красоты</div>
-                                            </div>
-                                            <div class="poem-link">
-                                                <div class="link-more" href="#">
-                                                    <div class="text">Директория любви</div>
-                                                    <img class="icon" src="@/assets/svg/more.svg"/>
-                                                </div>
-                                            </div>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item poem item-03" style="">
-                                        <router-link class="item poem poem-02" to="#">
-                                            <div class="poem-text">
-                                                <div>Уключина скрипит</div>
-                                                <div>Весло вихляет</div>
-                                                <div>Сочится через дно вода</div>
-                                                <div>А я гребу того не замечая</div>
-                                                <div>Гребу я в будущее из вчера</div>
-                                                <div>Гребу сегодня</div>
-                                                <div>Что есть только мочи</div>
-                                                <div>Гребу упорно</div>
-                                                <div>Мне хватает сил</div>
-                                                <div>А за бортом в ночи луна хохочет</div>
-                                                <div>Которую я чуть ни задавил</div>
-                                                <div>По звёздам Мирового Океана</div>
-                                                <div>Я бью веслом</div>
-                                                <div>Взрывая гладь воды</div>
-                                                <div>Мне б протрезветь</div>
-                                                <div>А я босой и пьяный</div>
-                                                <div>От счастья абсолютной красоты</div>
-                                            </div>
-                                            <div class="poem-link">
-                                                <div class="link-more" href="#">
-                                                    <div class="text">Директория любви</div>
-                                                    <img class="icon" src="@/assets/svg/more.svg"/>
-                                                </div>
-                                            </div>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item poem item-04" style="">
-                                        <router-link class="item poem poem-03" to="#">
-                                            <div class="poem-text">
-                                                <div>Не совпадают наши планы</div>
-                                                <div>С тем</div>
-                                                <div>Что нам уготовил Бог</div>
-                                                <div>И мы зализывая раны</div>
-                                                <div>Что следствием явились драмы</div>
-                                                <div>Из-под бровей глядим на храмы</div>
-                                                <div>И вопрошаем</div>
-                                                <div>Как ТЫ мог</div>
-                                                <div>&nbsp;</div>
-                                                <div>Непонимание процесса</div>
-                                                <div>Неосмысленье сути дня</div>
-                                                <div>В нас зарождают возмущенье</div>
-                                                <div>И боль обиды за себя</div>
-                                                <div>&nbsp;</div>
-                                                <div>Лишь крайне редко удаётся</div>
-                                                <div>Увидеть истинность причин</div>
-                                                <div>Ввиду которых мы имеем</div>
-                                                <div>Совсем не то что мы хотим</div>
-                                                <div>&nbsp;</div>
-                                                <div>Лишь крайне редко удаётся</div>
-                                                <div>Понять желаний пустоту</div>
-                                                <div>Сравнив их с тем что нам даётся</div>
-                                                <div>Точней сказать</div>
-                                                <div>Что воздаётся</div>
-                                                <div>За нашу слепоглухоту</div>
-
-                                            </div>
-                                            <div class="poem-link">
-                                                <div class="link-more" href="#">
-                                                    <div class="text">Знакомьтесь, это мы</div>
-                                                    <img class="icon" src="@/assets/svg/more.svg"/>
-                                                </div>
-                                            </div>
-                                        </router-link>
-                                    </div>
-                                </div>
-                                <button class="slider__btn slider__btn_prev">
-                                    <img class="icon one" src="@/assets/svg/prev_g.svg">
-                                    <img class="icon two" src="@/assets/svg/prev_y.svg">
-                                </button>
-                                <button class="slider__btn slider__btn_next">
-                                    <img class="icon one" src="@/assets/svg/next_g.svg">
-                                    <img class="icon two" src="@/assets/svg/next_y.svg">
-                                </button>
-                                <ol class="slider__indicators">
-                                    <li class="slider__indicator slider__indicator_active" data-slide-to="0"></li>
-                                    <li class="slider__indicator " data-slide-to="1"></li>
-                                    <li class="slider__indicator" data-slide-to="2"></li>
-                                    <li class="slider__indicator" data-slide-to="3"></li>
-                                </ol>
+                            <div class="slider__wrapper collection2">             
+                                <SliderPoemsMob2 :data="poems"/>
                             </div>
                         </div>
                     </div>
@@ -308,61 +154,14 @@
                     <h2 class="module-title">Книги</h2>
                     <div class="module-content">
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
-                            <div class="slider__wrapper">
-                                <div class="slider__items grid books" style="">
-                                    <div class="slider__item item-01 slider__item_active" style="">
-                                        <router-link class="item book" to="#">
-                                            <img class="book-image" src="@/assets/jpg/book01---Слова-рождённые-душой_800.jpg"/>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item item-02" style="">
-                                        <router-link class="item book" to="#">
-                                            <img class="book-image" src="@/assets/jpg/book02---поэтические-полотна_800.jpg"/>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item item-03" to="">
-                                        <router-link class="item book" to="#">
-                                            <img class="book-image" src="@/assets/jpg/book03_В_спираль_закрученная_мысль_800.jpg"/>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item item-04" style="">
-                                        <router-link class="item book" to="#">
-                                            <img class="book-image" src="@/assets/jpg/book04---Звездопад-на-каждый-день_800.jpg"/>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item item-04" style="">
-                                        <router-link class="item book" to="#">
-                                            <img class="book-image" src="@/assets/jpg/book05---Директория-любви_800.jpg"/>
-                                        </router-link>
-                                    </div>
-                                    <div class="slider__item item-04" style="">
-                                        <router-link class="item book" to="#">
-                                            <img class="book-image" src="@/assets/jpg/book06---Знакомьтесь-это-мы_800.jpg"/>
-                                        </router-link>
-                                    </div>
-                                </div>
-                                <button class="slider__btn slider__btn_prev">
-                                    <img class="icon one" src="@/assets/svg/prev_g.svg">
-                                    <img class="icon two" src="@/assets/svg/prev_y.svg">
-                                </button>
-                                <button class="slider__btn slider__btn_next">
-                                    <img class="icon one" src="@/assets/svg/next_g.svg">
-                                    <img class="icon two" src="@/assets/svg/next_y.svg">
-                                </button>
-                                <ol class="slider__indicators">
-                                    <li class="slider__indicator slider__indicator_active" data-slide-to="0"></li>
-                                    <li class="slider__indicator " data-slide-to="1"></li>
-                                    <li class="slider__indicator" data-slide-to="2"></li>
-                                    <li class="slider__indicator" data-slide-to="3"></li>
-                                    <li class="slider__indicator" data-slide-to="4"></li>
-                                    <li class="slider__indicator" data-slide-to="5"></li>
-                                </ol>
+                            <div class="slider__wrapper books">
+                                <SliderBooks :data="books" />
                             </div>
                         </div>
                     </div>
                     <div class="module-more">
-                        <router-link class="link-more" to="/gallery">
-                            <div class="text">Вся галерея</div>
+                        <router-link class="link-more" :to="`/books`">
+                            <div class="text">Вся книги</div>
                             <img class="icon" src="@/assets/svg/more.svg"/>
                         </router-link>
                     </div>
@@ -374,9 +173,11 @@
 
 <script>
 import { useStore } from '../store/index'
-import Slider from '../components/SliderBanner.vue'
-import SliderMob from '../components/SliderMobile.vue'
-import SliderPoemsHome from '../components/SliderPoemsHome.vue'
+import SliderBanner from '../components/home/SliderBanner.vue'
+import SliderGallery from '../components/home/SliderGallery.vue'
+import SliderPoemsMob1 from '../components/home/SliderPoemsMob1.vue'
+import SliderPoemsMob2 from '../components/home/SliderPoemsMob2.vue'
+import SliderBooks from '../components/home/SliderBooks.vue'
 
 export default {
   setup () {
@@ -384,9 +185,11 @@ export default {
     return { userStore }
   },
   components: {
-    Slider, 
-    SliderMob,
-    SliderPoemsHome
+    SliderBanner, 
+    SliderGallery,
+    SliderPoemsMob1,
+    SliderPoemsMob2,
+    SliderBooks
   },
   name: 'HomeView',
   props: {
@@ -397,7 +200,8 @@ export default {
         gallery: this.userStore.getPartGallerys()[0],
         galleryMob: this.userStore.getAllGallerys()[0],
         collection: this.userStore.getPartCollections(),
-        poems: this.userStore.getPartPoems()
+        poems: this.userStore.getPartPoems(),
+        books: this.userStore.getBooks
     }
   },
   mounted(){

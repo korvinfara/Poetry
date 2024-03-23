@@ -1,6 +1,6 @@
 <template>
     <swiper
-   
+    class="slider__items grid texts"
     :modules="modules"
     :slides-per-view="1"
     :space-between="50"

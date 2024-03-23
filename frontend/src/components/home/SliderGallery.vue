@@ -1,6 +1,6 @@
 <template>
     <swiper
-    class="slider__items gallery"
+    class="slider__items "
     :modules="modules"
     :slides-per-view="1"
     :space-between="50"
@@ -75,9 +75,9 @@
             }
         },
         mounted(){
-            this.swiper = document.querySelector(".gallery.swiper").swiper;
+           this.swiper = document.querySelector(".gallery .swiper").swiper;
 
-           // this.swiper.slideTo(this.$route.params.id - 1)
+      
          
         },
         methods:{
