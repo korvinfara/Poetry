@@ -36,7 +36,6 @@ export const useStore = defineStore('counter', {
       let arr2 = [];
       let arr3 = [];
       let total = curGallery.paintings.length;
-      console.log(total)
       let delta = Math.trunc(total / 3) - 1;
       let index1 = 0;
       let count1 = (index1 + delta);
@@ -60,9 +59,7 @@ export const useStore = defineStore('counter', {
         pic.poem =  this.addDivPoems(pic.poem)
         arr3.push(pic)
       }
-
       curGallery.parts = [ arr1, arr2, arr3 ]
-        
       return  curGallery
     },
     getAllGallerys(){
@@ -78,7 +75,7 @@ export const useStore = defineStore('counter', {
       let arr = [];
       curGallery.paintings.forEach(item=>{
         let pic = this.paintings.find(elem=>elem.img == item)
-        
+        pic.poem =  this.addDivPoems(pic.poem)
         arr.push(pic)
       })
       curGallery.fullPaints = arr
@@ -92,13 +89,16 @@ export const useStore = defineStore('counter', {
       })
       return arr
     },
+    getPartCollections(){
+      let curCollection = this.getCollection(this.collectionsPoems[0].id)
+      return curCollection
+    },
     getCollection(id) {
-      console.log(id)
       let curCollection = this.collectionsPoems.find(item=>item.id == id)
       let arr = [];
-      console.log(curCollection)
       curCollection.poems.forEach(item=>{
         let allPoems = this.poems.find(elem=>elem.name == item)
+        allPoems.text =  this.addDivPoems(allPoems.text)
         arr.push(allPoems)
       })
       curCollection.allPoems = arr
@@ -107,10 +107,38 @@ export const useStore = defineStore('counter', {
     addDivPoems(poem){
       let a = poem.slice(1)
       let n = a.replace(/\n/g, '</div>')
-      let c = n.replace(/[А-Я]/g, '<div>$&')
-      console.log('=>', c )
-      return c
+      let divs = n.replace(/[А-Я]/g, '<div>$&')
 
+      return divs
+    },
+    getPartPoems(){
+      let ishod = [
+        'Из ветра я себе построил дом',
+        'Уключина скрипит', 'Погадай мне по руке гадалка',
+        'Не совпадают наши планы'
+      ];
+      let arr = []
+      ishod.forEach(name=>{
+        let poem = this.poems.find(elem=>elem.name == name)
+        console.log(poem)
+        poem.text =  this.addDivPoems(poem.text)
+        let obj = {}
+        this.collectionsPoems.forEach(collection=>{
+
+          let ok = collection.poems.includes(name)
+          console.log(ok)
+          console.log(collection.poems)
+          if (ok) {
+            console.log(collection)
+            obj.collection = collection
+            obj.poem = poem
+          }
+        })
+        console.log(obj)
+        arr.push(obj)
+      })
+      console.log(arr)
+      return arr
     }
   }
 })

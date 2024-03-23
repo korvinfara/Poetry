@@ -1,6 +1,6 @@
 <template>
     <swiper
-    class="slider__items gallery"
+   
     :modules="modules"
     :slides-per-view="1"
     :space-between="50"
@@ -9,30 +9,24 @@
     @swiper="onSwiper"
     @slideChange="onSlideChange"
     >
-        <swiper-slide v-for = "(item, index) in data " :key="item">
-            <div class="slider__item painting item-01" style="">
-                <router-link class="item painting item-01" :to="`/`+ galleryId +`/` + item.img">
-                    <div class="painting-image">
-                        <img class="image" :src="`./files/gallery/` + item.img"  loading="lazy"/>
-                    </div>
-                    <div class="painting-text">
-                        <div  class="align">
-                            <div v-html="item.poem"></div>
-                        </div>
+        <swiper-slide v-for = "(item, index) in 13" :key="item" >
+            <div :class="`slider__item text item-${item < 10? '0' + item : item} ${item > 3? '0' + '' : 'slider__item_active'}`" style="">
+                <router-link class="item text item-01" to="/poems-item/1">
+                    <div class="align">
+                        <div v-html="data[index].text"></div>
                     </div>
                 </router-link>
             </div>
         </swiper-slide>
     </swiper>
-        <button @click="slidePrev" class="slider__btn slider__btn_prev" style="z-index: 1000;">
-            <img class="icon one" src="@/assets/svg/prev_g.svg">
-            <img class="icon two" src="@/assets/svg/prev_y.svg">
-        </button>
-        <button @click="slideNext" class="slider__btn slider__btn_next" style="z-index: 1000;">
-            <img class="icon one" src="@/assets/svg/next_g.svg">
-            <img class="icon two" src="@/assets/svg/next_y.svg">
-           
-        </button>
+    <button @click="slidePrev" class="slider__btn slider__btn_prev" style="z-index: 1000;">
+        <img class="icon one" src="@/assets/svg/prev_g.svg">
+        <img class="icon two" src="@/assets/svg/prev_y.svg">
+    </button>
+    <button @click="slideNext" class="slider__btn slider__btn_next" style="z-index: 1000;">
+        <img class="icon one" src="@/assets/svg/next_g.svg">
+        <img class="icon two" src="@/assets/svg/next_y.svg">
+    </button>
   </template>
   <script>
     // Import Swiper Vue.js components
@@ -75,16 +69,11 @@
             }
         },
         mounted(){
-            this.swiper = document.querySelector(".gallery.swiper").swiper;
-
-           // this.swiper.slideTo(this.$route.params.id - 1)
-         
+            this.swiper = document.querySelector(".collection .swiper").swiper;
         },
         methods:{
             onSlideChange(e){
-               // const index = e.activeIndex + 1
-                //this.$emit('setCurrIndex', index)
-                //this.$router.push({ name: 'books-item', params: { id: index }})             
+             
             },
             slideNext(){
                 this.swiper.slideNext()

@@ -67,7 +67,7 @@ const routes = [
     component: CartView
   },
   {
-    path: '/poems-item/:id',
+    path: '/:collection/:id',
     name: 'poems-item',
     component: PoemsItemView
   },
