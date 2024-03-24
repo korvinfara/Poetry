@@ -62,7 +62,7 @@
                     <div class="module-content">
                         <div class="slider primary" data-slider="itc-slider" data-loop="false">
                             <div class="slider__wrapper collection">
-                                <SliderPoemsMob1 :data="collection.allPoems" class="slider__items grid texts" />
+                                <SliderPoemsMob1 :data="collection.allPoems" :collectionId="collection.id"  class="slider__items grid texts" />
                             </div>
                         </div>
                     </div>

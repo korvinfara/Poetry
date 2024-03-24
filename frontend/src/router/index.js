@@ -29,7 +29,14 @@ const routes = [
   {
     path: '/gallery',
     name: 'gallery',
-    component: GalleryView
+    component: GalleryView,
+    
+  },
+  {
+    path: '/gallery/:gallery/:id',
+    name: 'gallerytem',
+    component: GalleryItemView,
+    
   },
   {
     path: '/poems',
@@ -37,22 +44,27 @@ const routes = [
     component: PoemsView
   },
   {
+    path: '/poems/:id',
+    name: 'poems-item',
+    component: PoemsItemView
+  },
+  {
     path: '/events',
     name: 'events',
     component: EventsView
   },
   {
-    path: '/events-item/:id',
+    path: '/events/:id',
     name: 'events-item',
     component: EventsItemView
   },
   {
     path: '/books',
     name: 'books',
-    component: BooksView
+    component: BooksView,
   },
   {
-    path: '/books-item/:id',
+    path: '/books/:id',
     name: 'books-item',
     component: BooksItemView
   },
@@ -67,20 +79,11 @@ const routes = [
     component: CartView
   },
   {
-    path: '/:collection/:id',
-    name: 'poems-item',
-    component: PoemsItemView
-  },
-  {
     path: '/poems-collection',
     name: 'poems-collection',
     component: PoemsCollectionView
   },
-  {
-    path: '/:gallery/:id',
-    name: 'gallery-item',
-    component: GalleryItemView
-  }
+ 
 ]
 
 const router = createRouter({

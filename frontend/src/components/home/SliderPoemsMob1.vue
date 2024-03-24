@@ -11,7 +11,7 @@
     >
         <swiper-slide v-for = "(item, index) in 13" :key="item" >
             <div :class="`slider__item text item-${item < 10? '0' + item : item} ${item > 3? '0' + '' : 'slider__item_active'}`" style="">
-                <router-link class="item text item-01" to="/poems-item/1">
+                <router-link class="item text item-01" :to="`/poems/${collectionId}/${data[index].id}`">
                     <div class="align">
                         <div v-html="data[index].text"></div>
                     </div>
@@ -61,7 +61,7 @@
       },
         props: {
             data: Object,
-            galleryId: String
+            collectionId: String
             },
         data(){
             return{

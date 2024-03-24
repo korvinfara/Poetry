@@ -12,7 +12,7 @@
                     <div class="module-content">
                         <div class="grid books page">
                             <div class="column">
-                                <a class="item book" href="/books-item/1">
+                                <a class="item book" href="/books/1">
                                     <div class="book-image">
                                         <img class="image" src="@/assets/jpg/book01---Слова-рождённые-душой_800.jpg"/>
                                     </div>
