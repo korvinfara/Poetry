@@ -1,5 +1,5 @@
 <template>
-   
+
 <div class="main">
     <div class="module paintings">
         <div v-for="gallery in data" :key="gallery.id" class="module-center">

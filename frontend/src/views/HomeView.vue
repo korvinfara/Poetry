@@ -75,7 +75,6 @@
                 </div>
             </div>
             <div class="module poems">
-               
                 <div class="module-center">
                     <h2 class="module-title">И так далее...</h2>
                     <div class="module-text">
@@ -205,6 +204,7 @@ export default {
     }
   },
   mounted(){
+    
     const paintings = document.querySelectorAll('.item.painting')
     paintings.forEach(function (painting) {
         const align = painting.querySelector('.align')

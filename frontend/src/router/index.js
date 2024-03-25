@@ -30,7 +30,6 @@ const routes = [
     path: '/gallery',
     name: 'gallery',
     component: GalleryView,
-    
   },
   {
     path: '/gallery/:gallery/:id',
@@ -44,9 +43,14 @@ const routes = [
     component: PoemsView
   },
   {
-    path: '/poems/:id',
+    path: '/poems/:collection',
     name: 'poems-item',
-    component: PoemsItemView
+    component: PoemsCollectionView
+  },
+  {
+    path: '/poems/:collection/:id',
+    name: 'poems-collection',
+    component:  PoemsItemView
   },
   {
     path: '/events',
@@ -78,11 +82,7 @@ const routes = [
     name: 'cart',
     component: CartView
   },
-  {
-    path: '/poems-collection',
-    name: 'poems-collection',
-    component: PoemsCollectionView
-  },
+
  
 ]
 
