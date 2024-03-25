@@ -43,6 +43,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="module-more">
                         <router-link class="link-more" :to="`/`+ gallery.id +`/` + gallery.paintings[0]">
                             <div class="text">Вся галерея</div>
